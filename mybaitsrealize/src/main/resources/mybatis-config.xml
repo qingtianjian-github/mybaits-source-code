@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 控制全局缓存（二级缓存）-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!--配置别名-->
+    <typeAliases>
+        <typeAlias type="com.jiagouedu.po.UserPo" alias="user"/>
+    </typeAliases>
+
+    <!--环境配置 default默认开发环境-->
+    <environments default="development">
+        <environment id="development">
+            <!-- 单独使用时配置成MANAGED没有事务 -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.0.16:3307/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--映射器,创建映射关系-->
+    <mappers>
+        <mapper resource="mybatis/MybatisUser.xml"/>
+    </mappers>
+</configuration>

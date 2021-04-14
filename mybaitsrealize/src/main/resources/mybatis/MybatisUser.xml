@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiagouedu.mapper.UserMapper">
+    <select id="getUser" resultType="com.jiagouedu.po.UserPo" parameterType="Integer">
+        SELECT user_id AS userId,user_name AS userName FROM  user  WHERE user_id = 1;
+    </select>
+</mapper>
